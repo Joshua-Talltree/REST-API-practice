@@ -1,4 +1,4 @@
-package entities;
+package com.jtalltree.eventmanagement.entities;
 
 import java.util.Objects;
 
