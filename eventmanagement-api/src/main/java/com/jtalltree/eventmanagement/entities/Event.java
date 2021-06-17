@@ -5,12 +5,7 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -20,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Event extends AbstractEntity {
 
+	@Column(nullable = false)
 	private String name;
 	private String description;
 	private ZonedDateTime startTime;
