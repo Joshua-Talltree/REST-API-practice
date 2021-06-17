@@ -23,12 +23,12 @@ public class Event extends AbstractEntity {
 	private ZoneId zoneId;
 	private Boolean started;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(nullable = false)
 	private Organizer organizer;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "event", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Participant> participants;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
