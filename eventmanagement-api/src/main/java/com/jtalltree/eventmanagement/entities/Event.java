@@ -23,7 +23,7 @@ public class Event extends AbstractEntity {
 	private ZoneId zoneId;
 	private Boolean started;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private Organizer organizer;
 	
