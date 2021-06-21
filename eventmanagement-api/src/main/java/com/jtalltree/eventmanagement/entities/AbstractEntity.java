@@ -22,6 +22,9 @@ public class AbstractEntity {
 	@Column(updatable = false)
 	protected Instant created;
 
+	public AbstractEntity() {
+	}
+
 	public Long getId() {
 		return id;
 	}

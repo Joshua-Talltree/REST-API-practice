@@ -1,5 +1,8 @@
 package com.jtalltree.eventmanagement.entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 import java.util.Set;
 
@@ -13,6 +16,16 @@ public class Organizer extends AbstractEntity {
 
 	@OneToMany(mappedBy = "organizer")
 	private Set<Event> events;
+
+	@JsonCreator
+	public Organizer() {
+	}
+
+	@JsonCreator
+	public Organizer(@JsonProperty("name") String name, @JsonProperty("events") Set<Event> events) {
+		this.name = name;
+		this.events = events;
+	}
 
 	public String getName() {
 		return name;

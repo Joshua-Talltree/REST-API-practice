@@ -23,6 +23,9 @@ public class Participant extends AbstractEntity {
 	@JoinColumn(referencedColumnName = "ID", nullable = false, updatable = false)
 	private Event event;
 
+	public Participant() {
+	}
+
 	public String getName() {
 		return name;
 	}
